@@ -20,6 +20,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<EDMngmntContext>(x => x.UseNpgsql(builder.Configuration.GetConnectionString("EDMngmntConn")));
 
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 

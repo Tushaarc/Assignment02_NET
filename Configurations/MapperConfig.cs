@@ -17,6 +17,9 @@ namespace EmpMngmntSys.Configurations
                 GetDepartmentEmployeesDto>();
             CreateMap<Employees,
                 EmployeeDto>().ReverseMap();
+            //For Insertion from DTO to Main Object
+            CreateMap<GetDepartmentDto, Departments>().ForMember(x => x.DId, options => options.Ignore());
+
         }
     }
 }

@@ -12,15 +12,17 @@ namespace EmpMngmntSys.Models
         public string EmployeeName { get; set; } = string.Empty;
 
         [Required]
-        [MaxLength(100), MinLength(21)]
+        [Range(21,100)]
         public int Age { get; set; } = int.MinValue;
 
         [Required]
         public decimal Salary { get; set; }
+
+        [Required]
         public int DId { get; set; }
 
-        [ForeignKey("DId")]
-        public virtual Departments? departments { get; set; }
+        //[ForeignKey("DId")]
+        //public virtual Departments? departments { get; set; }
 
     }
 }

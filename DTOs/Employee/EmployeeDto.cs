@@ -7,24 +7,25 @@ namespace EmpMngmntSys.DTOs.Employee
     public class EmployeeDto
     {
         [Key]
-        public int DId { get; set; }
-
-        [Required]
-        [MaxLength(50)]
-        public string DepartmentName { get; set; } = string.Empty;
-
-        [Key]
         public int EId { get; set; }
         [Required]
         [MaxLength(30)]
         public string EmployeeName { get; set; } = string.Empty;
 
         [Required]
-        [MaxLength(100), MinLength(21)]
+        [Range(21, 100)]
         public int Age { get; set; } = int.MinValue;
 
         [Required]
         public decimal Salary { get; set; }
+
+        /// Department details
+        /// 
+        public int DId { get; set; }
+
+        //[ForeignKey("DId")]
+        //public virtual Departments? departments { get; set; }
+
 
     }
 }
